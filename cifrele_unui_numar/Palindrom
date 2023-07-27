@@ -1,0 +1,28 @@
+package good_practice;
+
+import java.util.Scanner;
+public class Palindrom {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("n = ");
+		int n = sc.nextInt();
+		int copieNr = n;
+		int pal = 0;
+		
+		while(copieNr > 0) { //lucram cu o copie a nr. dat
+			int cifra = copieNr % 10;
+			copieNr /= 10;
+			pal = pal * 10 + cifra;
+		}
+		
+		if (pal == n) { //daca palindromul este acelasi cu nr. initial
+			System.out.println(n + " este palindrom!");
+		} else {
+			System.out.println(n + " NU este palindrom!");
+		}
+		
+		sc.close();
+	}
+
+}
